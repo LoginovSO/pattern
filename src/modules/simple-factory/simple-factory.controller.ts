@@ -2,6 +2,7 @@ import { Controller, Get } from '@nestjs/common';
 import { clientCode, ConcreteCreatorA, ConcreteCreatorB } from './factory-1';
 import { CarFactory, PlaneFactory } from './factory-2';
 import { ProductFactory } from './factory-3';
+import { BicycleRentalAgency, CarRentalAgency } from './factory-4';
 
 @Controller('simple-factory')
 export class SimpleFactoryController {
@@ -27,5 +28,14 @@ export class SimpleFactoryController {
 
     ProductA.method();
     ProductB.method();
+  }
+
+  @Get('factory-4')
+  factory4(): any {
+    const sixtRentalCompany = new CarRentalAgency();
+    sixtRentalCompany.lendVehicle('Skoda Octavia');
+
+    const municipalBikesCompany = new BicycleRentalAgency();
+    municipalBikesCompany.lendVehicle('Trek Vahoo');
   }
 }

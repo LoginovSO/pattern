@@ -1,20 +1,24 @@
 interface Transport {
+  status: string;
   move(): void;
 }
 
 class Car implements Transport {
+  status: '';
   public move(): void {
     console.log('Moving the car!');
   }
 }
 
 class Bicycle implements Transport {
+  status: '';
   public move(): void {
     console.log('Moving the bicycle!');
   }
 }
 
 class Plane implements Transport {
+  status: '';
   public move(): void {
     console.log('Flying the plane!');
   }
